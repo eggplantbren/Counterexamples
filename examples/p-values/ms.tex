@@ -12,6 +12,23 @@ Criticizing P-values is a favorite pastime among Bayesians. No
 
 \section{Voilating {\em more}}
 I learned this example from Alex Etz ({\tt http://alexanderetz.com/}).
+Imagine a drug company has an old drug which is known to cure
+75\% of patients of a disease. They are developing a new drug
+which they hope will be even more effective.
+The effectiveness of the old drug is $\theta_{\rm old} = 0.75$ and the
+effectiveness of the new drug is $\theta_{\rm new}$, which is unknown.
+Consider three ``coarse-grained''
+hypotheses about the value of $\theta_{\rm new}$:
+
+\begin{eqnarray}
+H_<: \theta_{\rm new} < 0.75\\
+H_0: \theta_{\rm new} = 0.75\\
+H_>: \theta_{\rm new} > 0.75
+\end{eqnarray}
+
+To measure $\theta_{\rm new}$, the company tests the drug on $N=100$ patients
+and counts the number, $x$, who recover.
+
 
 \end{document}
 
