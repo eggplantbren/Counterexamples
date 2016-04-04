@@ -1,5 +1,7 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{graphicx}
+
 \title{P-values behaving badly}
 \author{Brendon J. Brewer}
 
@@ -26,9 +28,22 @@ H_0: \theta_{\rm new} = 0.75\\
 H_>: \theta_{\rm new} > 0.75
 \end{eqnarray}
 
-To measure $\theta_{\rm new}$, the company tests the drug on $N=100$ patients
-and counts the number, $x$, who recover.
+To measure $\theta_{\rm new}$, the company tests the drug on $N=50$ patients
+and counts the number, $x$, who recover. The probability distribution for
+$x$ given $\theta_{\rm new}$ (and $N$) is Binomial(50, $\theta_{\rm new}$):
 
+\begin{eqnarray}
+p(x | \theta_{\rm new}) &=&
+\left(\begin{array}{cc}N \\ x\end{array}\right)
+\theta_{\rm new}^x \left(1 - \theta_{\rm new}\right)^{N - x}.
+\end{eqnarray}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{drug_example.pdf}
+\caption{\label{fig:drug_example}}
+\end{figure}
 
 \end{document}
 
