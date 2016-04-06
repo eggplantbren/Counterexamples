@@ -28,6 +28,15 @@ H_0: \theta_{\rm new} = 0.75\\
 H_>: \theta_{\rm new} > 0.75
 \end{eqnarray}
 
+The middle one, $H_0$, is the ``null hypothesis'' that the new drug and the
+old drug are identical in terms of effectiveness. Classical statistical tests
+are used to quantify the strength of the evidence against $H_0$. In reality,
+it's best to consider the full set of hypotheses about what the value of
+$\theta_{\rm new}$ might be, rather than boiling it down to these three
+scenarios. This is related to the idea
+that ``statistical significance'' and ``practical significance'' are not the
+same.
+
 To measure $\theta_{\rm new}$, the company tests the drug on $N=50$ patients
 and counts the number, $x$, who recover. The probability distribution for
 $x$ given $\theta_{\rm new}$ (and $N$) is Binomial(50, $\theta_{\rm new}$):
@@ -38,12 +47,18 @@ p(x | \theta_{\rm new}) &=&
 \theta_{\rm new}^x \left(1 - \theta_{\rm new}\right)^{N - x}.
 \end{eqnarray}
 
-
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.5]{drug_example.pdf}
 \caption{\label{fig:drug_example}}
 \end{figure}
+
+In probability theory (i.e. Bayesian statistics), the sum rule relates the
+probability of a join (logical {\bf or}) like so:
+
+\begin{eqnarray}
+P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I).
+\end{eqnarray}
 
 \end{document}
 
