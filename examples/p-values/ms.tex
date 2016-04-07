@@ -20,22 +20,29 @@ which they hope will be even more effective.
 The effectiveness of the old drug is $\theta_{\rm old} = 0.75$ and the
 effectiveness of the new drug is $\theta_{\rm new}$, which is unknown.
 Consider three ``coarse-grained''
-hypotheses about the value of $\theta_{\rm new}$:
+hypotheses about the value of $\theta_{\rm new}$. The new drug's
+effectiveness could be worse than, equal to, or better than that of the old
+drug:
 
-\begin{eqnarray}
-H_<: \theta_{\rm new} < 0.75\\
-H_0: \theta_{\rm new} = 0.75\\
-H_>: \theta_{\rm new} > 0.75
-\end{eqnarray}
+\begin{equation}
+\begin{array}{lcl}
+H_{\rm worse}:  &  &\theta_{\rm new} < 0.75\\
+H_0:            &  &\theta_{\rm new} = 0.75\\
+H_{\rm better}: &  &\theta_{\rm new} > 0.75
+\end{array}
+\end{equation}
 
-The middle one, $H_0$, is the ``null hypothesis'' that the new drug and the
+The middle proposition, $H_0$,
+is the ``null hypothesis'' that the new drug and the
 old drug are identical in terms of effectiveness. Classical statistical tests
 are used to quantify the strength of the evidence against $H_0$. In reality,
 it's best to consider the full set of hypotheses about what the value of
 $\theta_{\rm new}$ might be, rather than boiling it down to these three
 scenarios. This is related to the idea
 that ``statistical significance'' and ``practical significance'' are not the
-same.
+same. For example, $\theta_{\rm new}$ could be 0.750002, which is
+technically ``better'' than the old drug, but not by an amount that's likely
+to matter.
 
 To measure $\theta_{\rm new}$, the company tests the drug on $N=50$ patients
 and counts the number, $x$, who recover. The probability distribution for
@@ -55,10 +62,15 @@ p(x | \theta_{\rm new}) &=&
 
 In probability theory (i.e. Bayesian statistics), the sum rule relates the
 probability of a join (logical {\bf or}) like so:
-
 \begin{eqnarray}
-P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I).
+P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)\\
+                &=& P(A | I) + P(B | I) - P(A | I)P(B | A, I)\\
+                &=& P(A | I)\left[1 - P(B | A,I)\right] + P(B | I)\\
+                &\geq& P(B | I). 
 \end{eqnarray}
+i.e. {\em or} implies {\em more}.
+
+
 
 \end{document}
 
