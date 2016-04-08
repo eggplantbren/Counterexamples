@@ -19,7 +19,7 @@ p /= p.sum()
 # P(x <= 31 | H0) and P(x >= 44 | H0)
 pval_left  = np.sum(p[x <= 23])
 pval_right = np.sum(p[x >= 37])
-print(pval_left, pval_right)
+print(pval_left, pval_right, pval_left + pval_right)
 
 # Bar plot
 width = 0.5

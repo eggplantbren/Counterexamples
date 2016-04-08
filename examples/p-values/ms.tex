@@ -36,7 +36,6 @@ P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)\\
 Therefore the probability of $(A \vee B)$ must be greater than or equal to
 the probability of $B$. As a slogan, ``{\em or} implies {\em more}''.
 
-
 Imagine a drug company has an old drug which is known to cure
 75\% of patients of a disease. They are developing a new drug
 which they hope will be even more effective.
@@ -87,6 +86,19 @@ Suppose $x=37$ was observed.
 \begin{eqnarray}
 P(x \geq 37 | H_0) &=& 0.028\\
 P(x \leq 23 | H_0) &=& 0.031.
+\end{eqnarray}
+
+The p-value is supposed to quantify evidence against $H_0$.
+
+Can we interpret it as something like {\em how strongly we should believe in
+$H_0$?} Something like a posterior probability?
+And do we use the one sided p-value or the two sided?
+
+\begin{eqnarray}
+\left(H_0 \vee H_{\rm better}, \textnormal{data}\right) &\Longrightarrow&
+\textnormal{p-value} = 0.028\\
+\left(H_{\rm worse} \vee H_0 \vee H_{\rm better}, \textnormal{data}\right) &\Longrightarrow&
+\textnormal{p-value} = 0.059.
 \end{eqnarray}
 
 
