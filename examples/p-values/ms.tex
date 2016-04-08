@@ -19,17 +19,22 @@ If you have some judgment about how plausible $A$ is, what would you think
 about the proposition $A \vee B$ (read $A$ {\bf or} $B$), which would be true
 if either one of $A$ or $B$ is true (or both)? 
 
-
-
 In probability theory (i.e. Bayesian statistics), the sum rule relates the
-probability of a join (logical {\bf or}) like so:
+probability of $A \vee B$ to the probability of $A$ and the probability of
+$B$ like so:
 \begin{eqnarray}
-P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)\\
+P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)
+\end{eqnarray}
+
+From this, we can show
+\begin{eqnarray}
+P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)
                 &=& P(A | I) + P(B | I) - P(A | I)P(B | A, I)\\
                 &=& P(A | I)\left[1 - P(B | A,I)\right] + P(B | I)\\
                 &\geq& P(B | I). 
 \end{eqnarray}
-i.e. {\em or} implies {\em more}.
+Therefore the probability of $(A \vee B)$ must be greater than or equal to
+the probability of $B$. As a slogan, ``{\em or} implies {\em more}''.
 
 
 Imagine a drug company has an old drug which is known to cure
