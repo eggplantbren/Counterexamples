@@ -13,19 +13,20 @@ N = 50
 x = np.arange(0, N+1)
 
 # p(x | H0)
-p = scipy.misc.comb(N, x)*0.75**x*(1.0 - 0.75)**(N - x)
+p = scipy.misc.comb(N, x)*0.6**x*(1.0 - 0.6)**(N - x)
 p /= p.sum()
 
 # P(x <= 31 | H0) and P(x >= 44 | H0)
-pval_left  = np.sum(p[x <= 31])
-pval_right = np.sum(p[x >= 44])
+pval_left  = np.sum(p[x <= 23])
+pval_right = np.sum(p[x >= 37])
+print(pval_left, pval_right)
 
 # Bar plot
 width = 0.5
 plt.bar(x - 0.5*width, p, width=width, color="LightGray")
 plt.hold(True)
-plt.bar(x - 0.5*width, p*(x <= 31), width=width, color="green")
-plt.bar(x - 0.5*width, p*(x >= 44), width=width, color="yellow")
+plt.bar(x - 0.5*width, p*(x <= 23), width=width, color="green")
+plt.bar(x - 0.5*width, p*(x >= 37), width=width, color="yellow")
 
 plt.xlabel("Number of successes, $x$")
 plt.ylabel("Probability given $H_0$, $p(x | H_0)$")

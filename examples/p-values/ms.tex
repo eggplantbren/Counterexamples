@@ -40,7 +40,7 @@ the probability of $B$. As a slogan, ``{\em or} implies {\em more}''.
 Imagine a drug company has an old drug which is known to cure
 75\% of patients of a disease. They are developing a new drug
 which they hope will be even more effective.
-The effectiveness of the old drug is $\theta_{\rm old} = 0.75$ and the
+The effectiveness of the old drug is $\theta_{\rm old} = 0.6$ and the
 effectiveness of the new drug is $\theta_{\rm new}$, which is unknown.
 Consider three ``coarse-grained''
 hypotheses about the value of $\theta_{\rm new}$. The new drug's
@@ -49,9 +49,9 @@ drug:
 
 \begin{equation}
 \begin{array}{lcl}
-H_{\rm worse}:  &  &\theta_{\rm new} < 0.75\\
-H_0:            &  &\theta_{\rm new} = 0.75\\
-H_{\rm better}: &  &\theta_{\rm new} > 0.75
+H_{\rm worse}:  &  &\theta_{\rm new} < 0.6\\
+H_0:            &  &\theta_{\rm new} = 0.6\\
+H_{\rm better}: &  &\theta_{\rm new} > 0.6
 \end{array}
 \end{equation}
 
@@ -63,7 +63,7 @@ it's best to consider the full set of hypotheses about what the value of
 $\theta_{\rm new}$ might be, rather than boiling it down to these three
 scenarios. This is related to the idea
 that ``statistical significance'' and ``practical significance'' are not the
-same. For example, $\theta_{\rm new}$ could be 0.750002, which is
+same. For example, $\theta_{\rm new}$ could be 0.60002, which is
 technically ``better'' than the old drug, but not by an amount that's likely
 to matter.
 
@@ -83,7 +83,11 @@ p(x | \theta_{\rm new}) &=&
 \caption{\label{fig:drug_example}}
 \end{figure}
 
-
+Suppose $x=37$ was observed.
+\begin{eqnarray}
+P(x \geq 37 | H_0) &=& 0.028\\
+P(x \leq 23 | H_0) &=& 0.031.
+\end{eqnarray}
 
 
 \end{document}
