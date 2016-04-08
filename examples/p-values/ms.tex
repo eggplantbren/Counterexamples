@@ -9,11 +9,29 @@
 
 \maketitle
 
-Criticizing P-values is a favorite pastime among Bayesians. No
+Criticising P-values is a favorite pastime among Bayesians. No
 ``counterexamples'' repository would be complete without it.
 
-\section{Voilating {\em more}}
+\section{}
 I learned this example from Alex Etz ({\tt http://alexanderetz.com/}).
+Consider two propositions, $A$ and $B$, which you are trying to reason about.
+If you have some judgment about how plausible $A$ is, what would you think
+about the proposition $A \vee B$ (read $A$ {\bf or} $B$), which would be true
+if either one of $A$ or $B$ is true (or both)? 
+
+
+
+In probability theory (i.e. Bayesian statistics), the sum rule relates the
+probability of a join (logical {\bf or}) like so:
+\begin{eqnarray}
+P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)\\
+                &=& P(A | I) + P(B | I) - P(A | I)P(B | A, I)\\
+                &=& P(A | I)\left[1 - P(B | A,I)\right] + P(B | I)\\
+                &\geq& P(B | I). 
+\end{eqnarray}
+i.e. {\em or} implies {\em more}.
+
+
 Imagine a drug company has an old drug which is known to cure
 75\% of patients of a disease. They are developing a new drug
 which they hope will be even more effective.
@@ -60,15 +78,6 @@ p(x | \theta_{\rm new}) &=&
 \caption{\label{fig:drug_example}}
 \end{figure}
 
-In probability theory (i.e. Bayesian statistics), the sum rule relates the
-probability of a join (logical {\bf or}) like so:
-\begin{eqnarray}
-P(A \vee B | I) &=& P(A | I) + P(B | I) - P(A, B | I)\\
-                &=& P(A | I) + P(B | I) - P(A | I)P(B | A, I)\\
-                &=& P(A | I)\left[1 - P(B | A,I)\right] + P(B | I)\\
-                &\geq& P(B | I). 
-\end{eqnarray}
-i.e. {\em or} implies {\em more}.
 
 
 
